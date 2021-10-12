@@ -11,7 +11,7 @@
       name: "{{ item.key }}"
       comment: '{{ item.key }}@example.com'
       home: '/home/{{ item.key }}_homedir'
-      password: "{{item.value | password_hash('sha512')}}"
+      password: "{{item.value}}"
       update_password: on_create
     loop: "{{ new_users | dict2items }}"
 
